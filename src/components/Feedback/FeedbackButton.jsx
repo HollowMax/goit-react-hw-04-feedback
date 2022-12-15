@@ -1,4 +1,4 @@
-import { Title, FeedbackBtn } from './Feedback.styled.js';
+import {FeedbackBtn } from './Feedback.styled.js';
 
 export function FeedbackButton({ name, feedback }) {
   return (

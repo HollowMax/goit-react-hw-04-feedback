@@ -1,11 +1,17 @@
 import { FeedbackButton } from './FeedbackButton';
-import buttons from '../database/data.json';
 import PropTypes from 'prop-types';
 
-export function Feedback({ feedback }) {
-  return buttons.map(el => <FeedbackButton name={el} feedback={feedback} key={el} />);
+const capitalize = function (value) {
+  return `${value[0].toUpperCase()}${value.slice(1)}`;
+};
+
+export function Feedback({ options, onLeaveFeedback }) {
+  return options.map(el => (
+    <FeedbackButton name={capitalize(el)} onLeaveFeedback={onLeaveFeedback} key={el} />
+  ));
 }
 
 Feedback.propTypes = {
-  feedback: PropTypes.func.isRequired,
+  options: PropTypes.array.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 };

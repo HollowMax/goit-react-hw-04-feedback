@@ -1,13 +1,11 @@
-import { StatisticsItem } from './StatisticsItem';
-import stat from '../database/data.json';
 import PropTypes from 'prop-types';
 
-export function Statistics({ state, total, positivePercentage }) {
+export function Statistics({ good, neutral, bad, total, positivePercentage }) {
   return (
     <>
-      {stat.map(el => (
-        <StatisticsItem stat={el} key={el} state={state} />
-      ))}
+      <p>Good: {good}</p>
+      <p>Neutral: {neutral}</p>
+      <p>Bad: {bad}</p>
       <p>Total: {total}</p>
       <p>Positive feedback: {positivePercentage || 0}%</p>
     </>
@@ -15,7 +13,9 @@ export function Statistics({ state, total, positivePercentage }) {
 }
 
 Statistics.propTypes = {
-  state: PropTypes.objectOf(PropTypes.number.isRequired).isRequired,
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
   positivePercentage: PropTypes.number.isRequired,
 };

@@ -1,9 +1,9 @@
 import { FeedbackBtn } from './Feedback.styled.js';
 import PropTypes from 'prop-types';
 
-export function FeedbackButton({ name, feedback }) {
+export function FeedbackButton({ name, onLeaveFeedback }) {
   return (
-    <FeedbackBtn type="button" onClick={() => feedback(name.toLowerCase())}>
+    <FeedbackBtn type="button" onClick={() => onLeaveFeedback(name.toLowerCase())}>
       {name}
     </FeedbackBtn>
   );
@@ -11,5 +11,5 @@ export function FeedbackButton({ name, feedback }) {
 
 FeedbackButton.propTypes = {
   name: PropTypes.string.isRequired,
-  feedback: PropTypes.func.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 };

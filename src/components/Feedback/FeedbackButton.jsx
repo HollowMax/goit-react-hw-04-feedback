@@ -1,4 +1,5 @@
-import {FeedbackBtn } from './Feedback.styled.js';
+import { FeedbackBtn } from './Feedback.styled.js';
+import PropTypes from 'prop-types';
 
 export function FeedbackButton({ name, feedback }) {
   return (
@@ -7,3 +8,8 @@ export function FeedbackButton({ name, feedback }) {
     </FeedbackBtn>
   );
 }
+
+FeedbackButton.propTypes = {
+  name: PropTypes.string.isRequired,
+  feedback: PropTypes.func.isRequired,
+};

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export function StatisticsItem({ stat, state }) {
   return (
     <p>
@@ -5,3 +7,8 @@ export function StatisticsItem({ stat, state }) {
     </p>
   );
 }
+
+StatisticsItem.propTypes = {
+  stat: PropTypes.string.isRequired,
+  state: PropTypes.objectOf(PropTypes.number.isRequired).isRequired,
+};

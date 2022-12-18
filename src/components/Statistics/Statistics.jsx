@@ -1,5 +1,6 @@
 import { StatisticsItem } from './StatisticsItem';
 import stat from '../database/data.json';
+import PropTypes from 'prop-types';
 
 export function Statistics({ state, total, positivePercentage }) {
   return (
@@ -12,3 +13,9 @@ export function Statistics({ state, total, positivePercentage }) {
     </>
   );
 }
+
+Statistics.propTypes = {
+  state: PropTypes.objectOf(PropTypes.number.isRequired).isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
+};
